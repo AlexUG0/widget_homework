@@ -10,5 +10,6 @@ def filter_by_state(transaction_list: list[dict], state: str = "EXECUTED") -> li
 
 def sort_by_date(transaction_list: list[dict]) -> list[dict]:
     """Функция принимает на вход список транзакций и возвращает список, отсортированный по дате"""
+
     date_sort_list = sorted(transaction_list, key=lambda transaction: transaction["date"], reverse=True)
     return date_sort_list

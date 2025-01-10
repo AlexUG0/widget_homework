@@ -16,7 +16,7 @@ git clone git@github.com:ваш_пользователь/название_реп
 pip install -r requirements
 ```
 
-4Перейдите в директорию проекта
+4. Перейдите в директорию проекта
 
 ## Использование
 
@@ -30,17 +30,17 @@ pip install -r requirements
 
 **Пример:**
 
-data = [
+test_data = [
 {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
 {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
 {"id": 594226727, "state": "CANCELED", "date": "2018-09-12T21:27:25.241689"},
 {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"},
 ]
 
-executed_items = filter_by_state(data)
-print(executed_items)
+resulting_dictionary = filter_by_state(test_data)
+print(resulting_dictionary)
 
-# Вывод: [{'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'}, {'id': 939719570, 'state': 'EXECUTED', 'date': '2018-06-30T02:08:58.425572'}]
+### Вывод: [{'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'}, {'id': 939719570, 'state': 'EXECUTED', 'date': '2018-06-30T02:08:58.425572'}]
 
 #### 2. `sort_by_date`
 
@@ -50,14 +50,14 @@ print(executed_items)
 
 **Пример:**
 
-data = [
+test_data = [
 {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
 {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
 {"id": 594226727, "state": "CANCELED", "date": "2018-09-12T21:27:25.241689"},
 {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"},
 ]
 
-executed_items = sort_by_date(data)
-print(executed_items)
+resulting_dictionary = sort_by_date(test_data)
+print(resulting_dictionary)
 
-# Вывод: [{'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'}, {'id': 615064591, 'state': 'CANCELED', 'date': '2018-10-14T08:21:33.419441'}, {'id': 594226727, 'state': 'CANCELED', 'date': '2018-09-12T21:27:25.241689'}, {'id': 939719570, 'state': 'EXECUTED', 'date': '2018-06-30T02:08:58.425572'}]
+### Вывод: [{'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'}, {'id': 615064591, 'state': 'CANCELED', 'date': '2018-10-14T08:21:33.419441'}, {'id': 594226727, 'state': 'CANCELED', 'date': '2018-09-12T21:27:25.241689'}, {'id': 939719570, 'state': 'EXECUTED', 'date': '2018-06-30T02:08:58.425572'}]
