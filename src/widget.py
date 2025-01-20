@@ -6,12 +6,18 @@ def mask_account_card(account_card_number: str) -> str:
     if "Счет" in account_card_number:
         account_number = account_card_number[-20:]
         mask_account_number = get_mask_account(account_number)
-        return f"{account_card_number[:-20]}{mask_account_number}"
+        if mask_account_number != "Неверный формат ввода":
+            return f"{account_card_number[:-20]}{mask_account_number}"
+        else:
+            return "Неверный формат ввода"
 
     else:
         card_number = account_card_number[-16:]
         mask_card_number = get_mask_card_number(card_number)
-        return f"{account_card_number[:-16]}{mask_card_number}"
+        if mask_card_number != "Неверный формат ввода":
+            return f"{account_card_number[:-16]}{mask_card_number}"
+        else:
+            return "Неверный формат ввода"
 
 
 def get_date(date_str: str) -> str:
