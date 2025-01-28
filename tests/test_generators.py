@@ -107,8 +107,6 @@ def transactions():
 def test_filter_by_currency(transactions, currency, expected):
     result = list(filter_by_currency(transactions, currency))
     assert result == expected
-    # assert filter_by_currency(transactions, currency) == expected
-    # assert filter_by_currency(transactions, "RUB") == expected
 
 
 def test_transaction_descriptions(transactions):
