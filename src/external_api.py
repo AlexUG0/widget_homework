@@ -20,14 +20,14 @@ def amount_transaction(transaction_by_id):
     api_key = os.getenv("API_KEY")
     headers = {"apikey": api_key}
     if trans_code == "RUB":
-        return trans_amount
+        return float(trans_amount)
     else:
         try:
 
             url = f"https://api.apilayer.com/exchangerates_data/convert?to=RUB&from={trans_code}&amount={trans_amount}"
             response = requests.get(url, headers=headers)
             my_result = response.json()
-            return my_result["result"]
+            return float(my_result["result"])
         except Exception as e:
             print(e)
 
