@@ -1,14 +1,16 @@
-import os
 import logging
+import os
 
 from config import PATH_HOME
 
 # Основная конфигурация logging
-logging.basicConfig(level=logging.INFO,
-                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    filename=os.path.join(PATH_HOME, "logs", "masks.log"),  # Запись логов в файл
-                    filemode='w')  # Перезапись файла при каждом запуске
-logger = logging.getLogger('masks.py')
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    filename=os.path.join(PATH_HOME, "logs", "masks.log"),  # Запись логов в файл
+    filemode="w",
+)  # Перезапись файла при каждом запуске
+logger = logging.getLogger("masks.py")
 
 
 def get_mask_card_number(card_number: str) -> str:
