@@ -6,7 +6,7 @@ from config import PATH_HOME
 
 # Основная конфигурация logging
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.DEBUG,
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     filename=os.path.join(PATH_HOME, "logs", "utils.log"),  # Запись логов в файл
     filemode="w",

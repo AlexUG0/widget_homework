@@ -5,7 +5,7 @@ from config import PATH_HOME
 
 # Основная конфигурация logging
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.DEBUG,
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     filename=os.path.join(PATH_HOME, "logs", "masks.log"),  # Запись логов в файл
     filemode="w",
@@ -21,7 +21,7 @@ def get_mask_card_number(card_number: str) -> str:
         mask_card_number = card_number[:4] + " " + card_number[4:6] + "** **** " + card_number[-4:]
         return mask_card_number
     else:
-        logger.warning("Введены некорректные данные")
+        logger.error("Введены некорректные данные")
         return "Неверный формат ввода"
 
 
@@ -33,5 +33,5 @@ def get_mask_account(account_number: str) -> str:
         mask_account = "**" + account_number[-4:]
         return mask_account
     else:
-        logger.warning("Введены некорректные данные")
+        logger.error("Введены некорректные данные")
         return "Неверный формат ввода"
