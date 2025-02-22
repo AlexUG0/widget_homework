@@ -1,25 +1,21 @@
 import pandas as pd
-import csv
 
 
-def read_transactions_from_csv(path):
-    """функция возвращает список словарей с данными о транзакциях"""
+def read_transactions_from_csv(file_path):
+    """Функция считывает финансовые операции из CSV файла"""
     try:
-        with open(path, encoding="utf-8") as file:
-            try:
-                reader = pd.read_csv(file, delimiter=";")
-                dict_trans = reader.to_dict(orient="records")
-            except csv.Error as e:
-                return []
-    except FileNotFoundError:
-        return pd.DataFrame()
+        df = pd.read_csv(file_path)
+        transactions = df.to_dict(orient="records")
+        return transactions
+    except Exception:
+        raise
 
 
-def read_transactions_from_exel(path):
+def read_transactions_from_excel(file_path):
+    """Функция считывает финансовые операции из Excel файла"""
     try:
-        df = pd.read_excel(path)
-        return df.to_dict(orient="records")
-    except FileNotFoundError:
-        return "{}"
-    except ValueError as e:
-        return "{}"
+        df = pd.read_excel(file_path)
+        transactions = df.to_dict(orient="records")
+        return transactions
+    except Exception:
+        raise
