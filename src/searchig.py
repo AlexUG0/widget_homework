@@ -4,8 +4,8 @@ from typing import Dict, List
 
 
 def filter_transactions(transactions: List[Dict], search_string: str) -> List[Dict]:
-    """функция принимает список словарей с данными о банковских операциях и строку поиска, а возвращает список словарей,
-       у которых в описании есть данная строка"""
+    """функция принимает список словарей с данными о банковских операциях и строку поиска, а возвращает список
+       словарей, у которых в описании есть данная строка"""
     pattern = re.compile(re.escape(search_string), re.IGNORECASE)  # Компилируем шаблон
     filtered_transactions = [
         transaction for transaction in transactions if pattern.search(transaction.get("description", ""))
@@ -22,5 +22,4 @@ def count_transactions_by_category(transactions: List[Dict], categories: List[st
         if transaction.get("description") in categories
     ]
     grouped_transactions = Counter(description_list)
-
     return dict(grouped_transactions)
