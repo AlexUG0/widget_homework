@@ -32,5 +32,5 @@ def get_data_transactions_list(path):
     return data_transactions_list
 
 
-path_to_json = os.path.join(PATH_HOME, "data", "operations.json")
-print(get_data_transactions_list(path_to_json))
+# path_to_json = os.path.join(PATH_HOME, "data", "operations.json")
+# print(get_data_transactions_list(path_to_json))

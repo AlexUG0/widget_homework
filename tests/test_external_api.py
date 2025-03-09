@@ -21,7 +21,7 @@ def test_amount_transaction_rub(mock_request):
 
 @patch("src.external_api.requests.request")
 def test_amount_transaction_other_currency(mock_request):
-    mock_request.return_value.json.return_value = {"result": 747860.013285}
+    mock_request.return_value.json.return_value = {"result": 735128.227054 }
     transaction = {
         "id": 41428829,
         "state": "EXECUTED",
@@ -33,4 +33,4 @@ def test_amount_transaction_other_currency(mock_request):
     }
 
     result = amount_transaction(transaction)
-    assert result == 747860.013285
+    assert result == 729503.519219
